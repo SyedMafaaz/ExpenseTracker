@@ -31,6 +31,6 @@ jobs:
             # Pull the latest changes
             git pull origin main
             
-            # Rebuild and restart the docker containers
-            docker compose down
-            docker compose up -d --build
+            # Rebuild and restart the docker containers using the new docker/ structure
+            docker compose -f docker/docker-compose.yml down
+            docker compose -f docker/docker-compose.yml up -d --build
